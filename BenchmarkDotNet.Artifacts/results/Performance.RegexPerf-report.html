@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Performance.RegexPerf-20211205-221551</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1348 (20H2/October2020Update)
+Intel Core i9-10900K CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK=6.0.100
+  [Host]     : .NET 6.0.0 (6.0.21.52210), X64 RyuJIT
+  DefaultJob : .NET 6.0.0 (6.0.21.52210), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>              Method</th><th>    Mean</th><th>  Error</th><th> StdDev</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>RegexInterpretado</td><td>83.587 ns</td><td>1.6110 ns</td><td>1.5070 ns</td><td>-</td><td>-</td>
+</tr><tr><td>RegexCompilado</td><td>33.976 ns</td><td>0.3746 ns</td><td>0.3320 ns</td><td>-</td><td>-</td>
+</tr><tr><td>RegexInterpretadoTransient</td><td>1,265.519 ns</td><td>24.9477 ns</td><td>48.0658 ns</td><td>0.2556</td><td>2,680 B</td>
+</tr><tr><td>RegexCompiladoTransient</td><td>612,572.422 ns</td><td>4,165.6063 ns</td><td>3,896.5107 ns</td><td>-</td><td>7,664 B</td>
+</tr><tr><td>MetodoCustomizado</td><td>7.224 ns</td><td>0.0352 ns</td><td>0.0329 ns</td><td>-</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

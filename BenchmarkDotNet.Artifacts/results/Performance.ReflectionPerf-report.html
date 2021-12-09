@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Performance.ReflectionPerf-20211205-225137</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1348 (20H2/October2020Update)
+Intel Core i9-10900K CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK=6.0.100
+  [Host]     : .NET 6.0.0 (6.0.21.52210), X64 RyuJIT
+  DefaultJob : .NET 6.0.0 (6.0.21.52210), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>               Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>AcessoPublico</td><td>6.402 ns</td><td>0.1909 ns</td><td>0.4230 ns</td><td>0.0031</td><td>32 B</td>
+</tr><tr><td>ReflectionNormal</td><td>75.102 ns</td><td>0.9169 ns</td><td>0.8577 ns</td><td>0.0030</td><td>32 B</td>
+</tr><tr><td>ReflectionOtimizado</td><td>47.340 ns</td><td>0.6824 ns</td><td>0.6050 ns</td><td>0.0030</td><td>32 B</td>
+</tr><tr><td>ReflectionOtimizadoDelegate</td><td>7.662 ns</td><td>0.2124 ns</td><td>0.3989 ns</td><td>0.0031</td><td>32 B</td>
+</tr></tbody></table>
+</body>
+</html>
